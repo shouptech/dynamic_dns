@@ -58,7 +58,6 @@ def create_dns(zoneid, dnsname, ip, authemail, authkey):
     response = requests.post(url, headers=headers, json=payload)
     return response
 
-
 def update_dns(zoneid, recordid, dnsname, ip, authemail, authkey):
     """ Update DNS record """
     headers = {
