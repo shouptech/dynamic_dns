@@ -79,7 +79,7 @@ def main():
 
     parser = argparse.ArgumentParser(
         description='Update DNS record in cloudflare to current IP')
-    parser.add_argument('-i', '--ipurl', default='http://v4.ifconfig.co/ip',
+    parser.add_argument('-i', '--ipurl', default='http://ifconfig.me/ip',
         help='URL to query for current IP address')
     parser.add_argument('dnsname', help='DNS Name to update')
     parser.add_argument('authemail', help='Cloudflare Auth Email')
