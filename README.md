@@ -1,22 +1,25 @@
-# cloudflare_dynamicdns
+# DynamicDNS Script
 
-A script to create/update a DNS A record in CloudFlare with your current public
-IP address. This is intended in dynamic IP scenarios, such as a home Internet
-connection with an IP that can change.
+A script to create/update a DNS A record in with your current public IP address. This is
+intended in dynamic IP scenarios, such as a home Internet connection with an IP that can
+change.
+
+This script supports both CloudFlare and Gandi LiveDNS as DNS providers
 
 ## Usage
 
 ```shell
-usage: cloudflare_dynamicdns.py [-h] [-i IPURL] dnsname authemail authkey
+usage: dynamic_dns.py [-h] [-i IPURL] {cloudflare,gandi} dnsname authemail authkey
 
 Update DNS record in cloudflare to current IP
 
 positional arguments:
+  {cloudflare,gandi}    Which DNS provider to use
   dnsname               DNS Name to update
-  authemail             Cloudflare Auth Email
-  authkey               Cloudflare Auth Key
+  authemail             Account Email, only needed for cloudflare. Value is not used for Gandi.
+  authkey               API Key for provider
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -i IPURL, --ipurl IPURL
                         URL to query for current IP address
@@ -24,6 +27,14 @@ optional arguments:
 
 ## Example
 
+### CloudFlare Usage
+
 ```shell
-./cloudflare.py home.example.com foo@bar.com secretkey
+./dynamic_dns.py cloudflare home.example.com foo@bar.com secretkey
+```
+
+### Gandi Usage
+
+```shell
+./dynamic_dns.py gandi home.example.com foo@bar.com apikey
 ```
