@@ -6,7 +6,7 @@ connection with an IP that can change.
 
 ## Usage
 
-```
+```shell
 usage: cloudflare_dynamicdns.py [-h] [-i IPURL] dnsname authemail authkey
 
 Update DNS record in cloudflare to current IP
@@ -24,6 +24,6 @@ optional arguments:
 
 ## Example
 
-```
+```shell
 ./cloudflare.py home.example.com foo@bar.com secretkey
 ```
