@@ -65,7 +65,7 @@ class CloudFlare:
 class Gandi:
     def __init__(self, dnsname, authkey):
         self.dnsname = dnsname
-        self.authheader = {"Authorization": f"Apikey {authkey}"}
+        self.authheader = {"Authorization": f"Bearer {authkey}"}
 
         # In Gandi's docs, fqdn is the name of the dns zone
         self.fqdn = ".".join(dnsname.split(".")[-2:])

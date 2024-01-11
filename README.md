@@ -4,7 +4,7 @@ A script to create/update a DNS A record in with your current public IP address.
 intended in dynamic IP scenarios, such as a home Internet connection with an IP that can
 change.
 
-This script supports both CloudFlare and Gandi LiveDNS as DNS providers
+This script supports both CloudFlare and Gandi LiveDNS as DNS providers.
 
 ## Usage
 
@@ -35,6 +35,8 @@ options:
 
 ### Gandi Usage
 
+This script supports a personal access token, not the deprecated API keys.
+
 ```shell
-./dynamic_dns.py gandi home.example.com foo@bar.com apikey
+./dynamic_dns.py gandi home.example.com foo@bar.com personaltoken
 ```
